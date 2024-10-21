@@ -198,8 +198,14 @@ def main(collection, questions_fp, ai_client):
                 st.session_state.current_attempt = current_attempt
                 if is_new_student:
                     st.success(f"New student record created. You are starting attempt 1.")
+                    st.button("Start Test")
+                    return
+                    
                 else:
                     st.success(f"Returning student found. You are on attempt {current_attempt}.")
+                    st.button("Start Test")
+                    return
+                    
             else:
                 st.error("Please enter a valid Banner ID.")
         return
